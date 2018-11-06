@@ -1,0 +1,15 @@
+<div>
+    <h1>Welcome to the GIPHY search!</h1>
+    <p> Type in your search below... </p>
+    <input type="text" class="txt" style="width: 30%;" placeholder="Search GIPHY..." [(ngModel)] = "giphySearchString">
+    <input type="submit" class="btn" style="background-color: lightgray; width: 10%; margin-left: 20px; cursor: pointer;" value="Search" (click)="searchGiphy(limit)">
+</div>
+<div style="width: 100%; height: 50px;"></div>
+
+<div style="width: 100%; margin-top: 10px;">
+  <ng-container *ngFor="let giphyResult of giphyResults">
+    <span style="padding-right: 3em;">
+      <a href='{{ giphyResult }}' target="_blank"><img class="grow" src='{{ giphyResult }}' style="width: 250px; height: 250px;"></a>
+    </span>
+  </ng-container>
+</div>

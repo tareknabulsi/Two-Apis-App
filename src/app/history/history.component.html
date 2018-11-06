@@ -1,0 +1,13 @@
+<div style="margin-top: 20px;">
+  <span><strong style="font-size: 36px">Behold The History!!! &nbsp;&nbsp;&nbsp;&nbsp;</strong></span>
+  <span><a routerLink = ''><strong>I can't handle it! Take me back!!!</strong></a></span>
+</div>
+<div style="padding-top: 20px;">
+  <div *ngFor="let search of searches" style=" font-size: 20px;">
+    <div style="display: table; padding-top: 10px;">
+      <span style="display: table-cell; width: 10%;">{{ search.searchText }}</span>
+      <span style="display: table-cell; width: 20%;">{{ search.createdAt }}</span>
+      <span style="display: table-cell; width: 20%;">{{ search.userID }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<html>
+  <h1 style="text-align: center; padding: .4em 1.3em; background-color: #57B3F1;">Welcome To The Wiki/GIPHY App!!!</h1>
+  <div class="color-light container">
+    <div class="col"><h3>Feel free to make a Wiki search!</h3></div>
+    <div class="col"><h3>. . . Or perhaps in the mood for a GIPHY search!</h3></div>
+  </div>
+
+  <div class="container color-dark"> <!--Top container for the buttons and search inputs-->
+    <div class="button-container">
+      <button class="button" id="wikiButton" (click)="searchWikiAndRoutePage()">Make a full Wiki Search! (100 results)</button>
+      <div>
+        <input type="text" class="txt" style="width: 37%;" placeholder="Search Wiki..." [(ngModel)] = "wikiSearchString">
+        <input type="submit" class="btn" style="background-color: lightgray; width: 20%; cursor: pointer;" value="Quick Search (20)" (click)="searchWiki(wikiLimit)">
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="button" id="giphyButton" (click)="searchGiphyAndRoutePage()">Make a full GIPHY Search! (100 results)</button>
+      <div>
+        <input type="text" class="txt" style="width: 37%;" placeholder="Search GIPHY..." [(ngModel)] = "giphySearchString">
+        <input type="submit" class="btn" style="background-color: lightgray; width: 20%; cursor: pointer;" value="Quick Search (16)" (click)="searchGiphy(giphyLimit)">
+      </div>
+    </div>
+  </div>
+
+  <div class="container color-dark" id="outerContainer"> <!--Bottom container for the results-->
+    <div class="menu-item-div">
+      <ol>
+        <li *ngFor="let wikiResult of wikiResults" style="margin-left: 1em; font-size: 17px;">
+          <a href="https://en.wikipedia.org/?curid={{ wikiResult.iD }}" target="_blank">
+            {{ wikiResult.name }}
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="menu-item-div">
+      <ng-container *ngFor="let giphyResult of giphyResults">
+        <span style="padding-right: 3em;">
+          <a href='{{ giphyResult }}' target="_blank"><img class="grow" src='{{ giphyResult }}' style="width:100px;height:100px;"></a>
+        </span>
+      </ng-container>
+    </div>
+  </div><!--outer container-->
+
+  <div  style="height: 20px;">
+    <a routerLink = "../history">
+      <button class="button" style="background-color: #635b82;
+                                    font-size: 16px;
+                                    padding: .5em;
+                                    width: 100%;
+                                    height: 50px;">
+        Search the deep and dark history... If you dare!!!
+      </button>
+    </a>
+  </div>
+</html>

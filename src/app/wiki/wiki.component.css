@@ -1,0 +1,10 @@
+input.txt, input.btn {
+  display: inline-block;
+  float: left;
+  border: 0;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+ol li:hover {
+  text-decoration: underline;
+}

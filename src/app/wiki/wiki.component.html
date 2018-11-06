@@ -1,0 +1,16 @@
+<div>
+    <h1>Welcome to the Wiki search!</h1>
+    <p> Type in your search below... </p>
+    <input type="text" class="txt" style="width: 30%;" placeholder="Search Wiki..." [(ngModel)] = "wikiSearchString">
+    <input type="submit" class="btn" style="background-color: lightgray; width: 10%; margin-left: 20px; cursor: pointer;" value="Search" (click)="searchWiki(limit)">
+</div>
+<div style="width: 100%; height: 50px;"></div>
+<div>
+  <ol style="padding-top: 20px;">
+    <li *ngFor="let wikiResult of wikiResults" style=" font-size: 24px;">
+      <a href="https://en.wikipedia.org/?curid={{ wikiResult.iD }}" target="_blank">
+        {{ wikiResult.name }}
+      </a>
+    </li>
+  </ol>
+</div>
